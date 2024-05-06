@@ -1,56 +1,19 @@
-#User function Template for python3
-
+#Back-end complete function Template for Python 3
 
 class Solution:
     # Program for zig-zag conversion of array
     def zigZag(self, arr, n):
-        
-        
-        flag=True
-        i=0
-        while i<n-1:
-            if arr[i]>arr[i+1] and flag==True:
-                arr[i],arr[i+1]=arr[i+1],arr[i]
-                flag=False
-                
-                
-            elif arr[i]<arr[i+1]  and flag==False:
-                arr[i],arr[i+1]=arr[i+1],arr[i]
-                flag=True
-            
-            elif arr[i]<arr[i+1] and flag==True:
-                flag=False
-            
+        flag = True
+        for i in range(n - 1):
+            # swapping elements if flag is True and current element is greater than next element
+            if flag:
+                if arr[i] > arr[i + 1]:
+                    arr[i], arr[i + 1] = arr[i + 1], arr[i]
+            # swapping elements if flag is False and current element is smaller than next element
             else:
-                if arr[i]>arr[i+1] and flag==False:
-                    flag=True
-                
-            i+=1
-
-
-        
-        
-        # 4,3,7,8,6,2,1
-       
-        # 3,4,7,8,6,2,1
-        
-        # 3,7,4,8,6,2,1
-        
-        # 3,7,4,8,6,2,1
-        
-        # 3,7,4,8,2,6,1
-            
-      
-            
-
-# 1
-# 9825  
-#                 # [3, 7, 4, 8, 2, 6, 1]
-            
-            
-        
-        
-        
+                if arr[i] < arr[i + 1]:
+                    arr[i], arr[i + 1] = arr[i + 1], arr[i]
+            flag = not flag
 
 
 #{ 
